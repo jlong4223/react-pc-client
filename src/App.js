@@ -11,7 +11,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Route exact path="/signup" render={(props) => <SignUpPage />} />
+      <Route
+        exact
+        path="/signup"
+        render={(props) => <SignUpPage {...props} history={props.history} />}
+      />
       <Footer />
     </div>
   );
