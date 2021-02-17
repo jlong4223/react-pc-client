@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { signup } from "../services/UserService";
 
 const SignUpForm = (props) => {
@@ -23,8 +24,17 @@ const SignUpForm = (props) => {
       await signup(formState);
       props.history.push("/");
     } catch (err) {
-      console.log("error");
+      alert(err);
+      console.log(err);
     }
+  }
+
+  function isFormInvalid() {
+    return !(
+      formState.name &&
+      formState.email &&
+      formState.password === formState.passwordConfirm
+    );
   }
 
   return (
@@ -65,7 +75,8 @@ const SignUpForm = (props) => {
           onChange={handleChange}
         />
         <div>
-          <button>Signup</button>
+          <button disabled={isFormInvalid()}>Signup</button> &nbsp;&nbsp;
+          <Link to="/">Cancel</Link>
         </div>
       </form>
     </div>
