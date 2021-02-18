@@ -22,6 +22,7 @@ const SignUpForm = (props) => {
     e.preventDefault();
     try {
       await signup(formState);
+      //   props.handleSignupOrLogin();
       props.history.push("/");
     } catch (err) {
       alert(err);
