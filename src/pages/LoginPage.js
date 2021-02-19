@@ -2,7 +2,7 @@ import LoginForm from "../components/LoginForm";
 
 const LoginPage = (props) => {
   return (
-    <main class="page">
+    <main className="page">
       <div>
         <LoginForm
           handleSignupOrLogin={props.handleSignupOrLogin}
