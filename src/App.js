@@ -25,28 +25,30 @@ function App(props) {
   return (
     <div className="App">
       <Header userState={userState.user} handleLogout={handleLogout} />
-      <Route
-        exact
-        path="/signup"
-        render={(props) => (
-          <SignUpPage
-            {...props}
-            history={props.history}
-            handleSignupOrLogin={handleSignupOrLogin}
-          />
-        )}
-      />
-      <Route
-        exact
-        path="/login"
-        render={(props) => (
-          <LoginPage
-            {...props}
-            history={props.history}
-            handleSignupOrLogin={handleSignupOrLogin}
-          />
-        )}
-      />
+      <main className="page">
+        <Route
+          exact
+          path="/signup"
+          render={(props) => (
+            <SignUpPage
+              {...props}
+              history={props.history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/login"
+          render={(props) => (
+            <LoginPage
+              {...props}
+              history={props.history}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          )}
+        />
+      </main>
       <Footer />
     </div>
   );
