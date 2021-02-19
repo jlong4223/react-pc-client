@@ -10,7 +10,8 @@ function removeToken() {
   localStorage.removeItem("token");
 }
 
-function getToken() {
+function getToken(res) {
+  //   let jwt = res.token;
   let token = localStorage.getItem("token");
   if (token) {
     const payload = JSON.parse(atob(token.split(".")[1]));
@@ -25,7 +26,7 @@ function getToken() {
 
 function getUserFromToken() {
   const token = getToken();
-  return token ? JSON.parse(atob(token.split(".")[1])).name : null;
+  return token ? JSON.parse(atob(token.split(".")[1])).id : null;
 }
 
 export { setToken, getToken, getUserFromToken, removeToken };
