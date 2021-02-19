@@ -1,11 +1,17 @@
+import { Link } from "react-router-dom";
+
 const Header = (props) => {
   let nav = props.userState ? (
     <div>
       <p>Hi, {props.userState}!</p>
+      <Link to="" onClick={props.handleLogout}>
+        Logout
+      </Link>
     </div>
   ) : (
     <div>
-      <p>Please Login</p>
+      <Link to="/login">Login</Link>
+      <Link to="/signup">Signup</Link>
     </div>
   );
 

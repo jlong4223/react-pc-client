@@ -9,16 +9,22 @@ import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import { getUser, logout } from "./services/UserService";
 
-function App() {
+function App(props) {
   const [userState, setUserState] = useState({ user: getUser() });
 
   function handleSignupOrLogin() {
     setUserState({ user: getUser() });
   }
 
+  function handleLogout() {
+    logout();
+    setUserState({ user: null });
+    props.history.push("/");
+  }
+
   return (
     <div className="App">
-      <Header userState={userState.user} />
+      <Header userState={userState.user} handleLogout={handleLogout} />
       <Route
         exact
         path="/signup"

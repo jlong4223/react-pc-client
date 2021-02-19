@@ -16,7 +16,6 @@ function signup(user) {
     .then(({ token }) => setToken(token));
 }
 
-// TODO a token is not being set properly
 function login(credentials) {
   return fetch(BASE_URL + "login", {
     method: "POST",
@@ -31,8 +30,12 @@ function login(credentials) {
     .then(({ token }) => setToken(token));
 }
 
+function logout() {
+  return removeToken();
+}
+
 function getUser() {
   return getUserFromToken();
 }
 
-export { signup, getUser, login };
+export { signup, getUser, login, logout };
