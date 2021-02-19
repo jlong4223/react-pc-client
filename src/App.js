@@ -12,14 +12,13 @@ import { getUser, logout } from "./services/UserService";
 function App() {
   const [userState, setUserState] = useState({ user: getUser() });
 
-  // TODO figure out why a user is not being grabbed from localstorage after logging in
   function handleSignupOrLogin() {
     setUserState({ user: getUser() });
   }
 
   return (
     <div className="App">
-      <Header />
+      <Header userState={userState.user} />
       <Route
         exact
         path="/signup"
