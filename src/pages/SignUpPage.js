@@ -2,12 +2,14 @@ import SignUpForm from "../components/SignUpForm";
 
 const SignUpPage = (props) => {
   return (
-    <div>
-      <SignUpForm
-        history={props.history}
-        handleSignupOrLogin={props.handleSignupOrLogin}
-      />
-    </div>
+    <main class="page">
+      <div>
+        <SignUpForm
+          history={props.history}
+          handleSignupOrLogin={props.handleSignupOrLogin}
+        />
+      </div>
+    </main>
   );
 };
 
