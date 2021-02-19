@@ -5,6 +5,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import HomePage from "./pages/HomePage/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import { getUser, logout } from "./services/UserService";
@@ -26,6 +27,7 @@ function App(props) {
     <div className="App">
       <Header userState={userState.user} handleLogout={handleLogout} />
       <main className="page">
+        <Route exact path="/" render={(props) => <HomePage />} />
         <Route
           exact
           path="/signup"
