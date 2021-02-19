@@ -21,7 +21,6 @@ const LoginForm = (props) => {
     if (!formValid()) return;
     try {
       await login(formState);
-      //   TODO why is the login function not grabbing a token?
       props.handleSignupOrLogin();
       props.history.push("/");
     } catch (err) {
