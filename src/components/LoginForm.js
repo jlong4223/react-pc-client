@@ -59,6 +59,7 @@ const LoginForm = (props) => {
           />
         </div>
         <button disabled={!formValid()}>Log In</button>
+        <Link to="/signup">Don't have an account?</Link>
       </form>
     </div>
   );

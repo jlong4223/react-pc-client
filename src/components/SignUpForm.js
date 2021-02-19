@@ -78,6 +78,7 @@ const SignUpForm = (props) => {
         <div>
           <button disabled={isFormInvalid()}>Signup</button> &nbsp;&nbsp;
           <Link to="/">Cancel</Link>
+          <Link to="/login">Have an account?</Link>
         </div>
       </form>
     </div>
