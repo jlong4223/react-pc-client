@@ -8,6 +8,8 @@ This is an application that replicates a state/national park website.
 - Node.js, MySQL, Express.js API
 - React Router
 - Styled Components
+- Bootstrap
+- Font Awesome
 
 ## Screenshots:
 
