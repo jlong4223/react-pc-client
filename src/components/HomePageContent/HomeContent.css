@@ -1,0 +1,22 @@
+#content-holder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid red;
+  width: 1000px;
+}
+
+.contentDiv {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 300px;
+  margin: 20px 0;
+  padding: 18px;
+  border: 1px solid green;
+}
+
+.contentDiv p,
+h4 {
+  text-align: left;
+}
