@@ -1,10 +1,13 @@
 import "./HomePage.css";
+import HomePageContent from "../../components/HomePageContent/HomePageContent";
 
 const HomePage = (props) => {
   return (
     <>
-      <main className="home"></main>
-      <div>Home</div>
+      <main className="main">
+        <div className="home"></div>
+      </main>
+      <HomePageContent />
     </>
   );
 };
