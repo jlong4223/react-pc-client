@@ -1,5 +1,5 @@
 .main {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +9,7 @@
     url("https://i.imgur.com/wSa7Y7f.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 10px;
   flex-grow: 1;
   flex-direction: column;
   width: 100%;

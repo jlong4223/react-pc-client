@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "./Header.css";
@@ -12,6 +13,29 @@ const StyledHeader = styled.header`
 `;
 
 const Header = (props) => {
+  const fixedText = "fixed";
+  const whenNotFixed = "not fixed";
+  const [headerText, setHeaderText] = useState(fixedText);
+  useEffect(() => {
+    const header = document.getElementById("myHeader");
+    const sticky = header.offsetTop;
+    const scrollCallBack = window.addEventListener("scroll", () => {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+        if (headerText !== fixedText) {
+          setHeaderText(fixedText);
+        }
+      } else {
+        header.classList.remove("sticky");
+        if (headerText !== whenNotFixed) {
+          setHeaderText(whenNotFixed);
+        }
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll", scrollCallBack);
+    };
+  });
   let nav = props.userState ? (
     <div className="nav">
       <Link to="">Hi, {props.userState}!</Link>
@@ -27,7 +51,7 @@ const Header = (props) => {
   );
 
   return (
-    <StyledHeader>
+    <StyledHeader id="myHeader">
       <div>
         <Link className="title" to="/">
           <i className="fas fa-ship fa-lg"></i>
