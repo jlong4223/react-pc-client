@@ -11,14 +11,23 @@ const HomePageContent = (props) => {
           sanitizer. The total number of park visitors may be limited.
         </p>
       </div>
-      <div className="contentDiv info-pic">
-        <div>
-          <h4>Port Chaveriat Information</h4>
-          <p>
-            Welcome to the Port Chaveriat Website. Find out what our unique
-            destination has to offer, explore the natural beauty of Petoskey,
-            and have an adventure with your friends and family.
-          </p>
+      <div className="contentDiv" id="info">
+        <div id="info-pic">
+          <div id="flower-pic">
+            <img
+              id="flowers"
+              src="https://i.imgur.com/Ipwixfq.jpg"
+              alt="flowers"
+            />
+          </div>
+          <div>
+            <h4>Port Chaveriat Information</h4>
+            <p>
+              Welcome to the Port Chaveriat Website. Find out what our unique
+              destination has to offer, explore the natural beauty of Petoskey,
+              and have an adventure with your friends and family.
+            </p>
+          </div>
         </div>
       </div>
     </div>
