@@ -38,7 +38,7 @@ const Header = (props) => {
   });
   let nav = props.userState ? (
     <div className="nav">
-      <Link to="">Hi, {props.userState}!</Link>
+      <Link to="/profile">Hi, {props.userState}!</Link>
       <Link to="" onClick={props.handleLogout}>
         Logout
       </Link>

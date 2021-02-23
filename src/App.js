@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import { getUser, logout } from "./services/UserService";
 
 function App(props) {
@@ -49,6 +50,17 @@ function App(props) {
               handleSignupOrLogin={handleSignupOrLogin}
             />
           )}
+        />
+        <Route
+          exact
+          path="/profile"
+          render={(props) =>
+            getUser() ? (
+              <ProfilePage {...props} user={userState.user} />
+            ) : (
+              <Redirect to="/" />
+            )
+          }
         />
       </main>
       <Footer />
