@@ -9,6 +9,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   padding: 0 15px;
   height: 50px;
+  background-color: #eae8e1;
   /* border: 1px solid green; */
 `;
 
@@ -39,12 +40,14 @@ const Header = (props) => {
   let nav = props.userState ? (
     <div className="nav">
       <Link to="/profile">Hi, {props.userState}!</Link>
+      {/* <Link to="/weather">Weather</Link> */}
       <Link to="" onClick={props.handleLogout}>
         Logout
       </Link>
     </div>
   ) : (
     <div className="nav">
+      {/* <Link to="/weather">Weather</Link> */}
       <Link to="/login">Login</Link>
       <Link to="/signup">Signup</Link>
     </div>
@@ -52,11 +55,16 @@ const Header = (props) => {
 
   return (
     <StyledHeader id="myHeader">
-      <div>
+      <div id="headerIcons">
         <Link className="title" to="/">
           <i className="fas fa-ship fa-lg"></i>
           Port Chaveriat
         </Link>
+        <p>{props.temp}&deg;</p>
+        <img
+          src={`https://openweathermap.org/img/w/${props.icon}.png`}
+          alt="Current Conditions"
+        />
       </div>
       <div>{nav}</div>
     </StyledHeader>
