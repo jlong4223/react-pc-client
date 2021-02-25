@@ -10,6 +10,10 @@ This is an application that replicates a state/national park website.
 - Styled Components
 - Bootstrap
 - Font Awesome
+- Google Maps
+- Open Weather Map API
+- Geolocation
+- JsonWebToken
 
 ## Screenshots:
 
