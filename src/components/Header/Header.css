@@ -24,3 +24,7 @@ a:hover {
   width: 100%;
   z-index: 99;
 }
+
+#headerIcons {
+  display: flex;
+}
