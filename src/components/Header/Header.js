@@ -40,14 +40,14 @@ const Header = (props) => {
   let nav = props.userState ? (
     <div className="nav">
       <Link to="/profile">Hi, {props.userState}!</Link>
-      {/* <Link to="/weather">Weather</Link> */}
+      <a href="#weatherHolder">Weather</a>
       <Link to="" onClick={props.handleLogout}>
         Logout
       </Link>
     </div>
   ) : (
     <div className="nav">
-      {/* <Link to="/weather">Weather</Link> */}
+      <a href="#weatherHolder">Weather</a>
       <Link to="/login">Login</Link>
       <Link to="/signup">Signup</Link>
     </div>
@@ -60,11 +60,6 @@ const Header = (props) => {
           <i className="fas fa-ship fa-lg"></i>
           Port Chaveriat
         </Link>
-        <p>{props.temp}&deg;</p>
-        <img
-          src={`https://openweathermap.org/img/w/${props.icon}.png`}
-          alt="Current Conditions"
-        />
       </div>
       <div>{nav}</div>
     </StyledHeader>
