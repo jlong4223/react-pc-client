@@ -9,6 +9,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Map from "./components/Map/Map";
+import Weather from "./components/Weather/Weather";
 import HomePage from "./pages/HomePage/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
@@ -52,12 +53,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <Header
-        userState={userState.user}
-        handleLogout={handleLogout}
-        icon={mapData.icon}
-        temp={mapData.temp}
-      />
+      <Header userState={userState.user} handleLogout={handleLogout} />
       <main className="page">
         <Route exact path="/" render={(props) => <HomePage {...props} />} />
         <Route
@@ -93,14 +89,10 @@ function App(props) {
             )
           }
         />
-        {/* <Route
-          exact
-          path="/weather"
-          render={(props) => <Map lat={mapData.lat} lng={mapData.lng} />}
-        /> */}
       </main>
-      <div>
+      <div id="mapspace">
         <Map lat={mapData.lat} lng={mapData.lng} />
+        <Weather icon={mapData.icon} temp={mapData.temp} />
       </div>
       <Footer />
     </div>
