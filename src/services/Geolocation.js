@@ -1,3 +1,5 @@
+// TODO set location to lakehouse
+
 export function getCurrentLatLng() {
   // Wrap getCurrentPosition to return a promise
   return new Promise((resolve) => {
