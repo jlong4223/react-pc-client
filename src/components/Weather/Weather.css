@@ -1,4 +1,8 @@
 #weatherHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 300px;
   margin-left: -100px;
   border-radius: 10px;
