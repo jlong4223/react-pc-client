@@ -1,6 +1,6 @@
 const ProfilePage = (props) => {
   return (
-    <div>
+    <div className="page">
       <h1>Hi {props.user}</h1>
     </div>
   );
