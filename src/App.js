@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import Map from "./components/Map/Map";
 import Weather from "./components/Weather/Weather";
 import HomePage from "./pages/HomePage/HomePage";
+import SchedulePage from "./pages/SchedulePage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
@@ -102,6 +103,7 @@ function App(props) {
               )
             }
           />
+          <Route exact path="/schedule" render={(props) => <SchedulePage />} />
         </Switch>
         <div id="mapspace">
           <Map lat={mapData.lat} lng={mapData.lng} />
