@@ -1,6 +1,6 @@
 # React.js Port-Chaveriat
 
-This is an application that replicates a state/national park website.
+This is an application that will be used for scheduling family lake-house events.
 
 ## Technologies Used
 
@@ -14,6 +14,8 @@ This is an application that replicates a state/national park website.
 - Open Weather Map API
 - Geolocation
 - JsonWebToken
+- moment.js
+- react-big-calendar
 
 ## Screenshots:
 
