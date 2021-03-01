@@ -1,7 +1,7 @@
 import "./HomeContent.css";
 // import Map from "../Map/Map";
 // import Weather from "../Weather/Weather";
-
+// TODO figure out error when adding map here
 const HomePageContent = (props) => {
   return (
     <>
