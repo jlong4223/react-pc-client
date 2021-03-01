@@ -25,6 +25,8 @@ const SchedulePage = (props) => {
   }
 
   const allEvents = eventData.map((event) => {
+    event.start = moment.utc(event.start).toDate();
+    event.end = moment.utc(event.end).toDate();
     return event;
   });
 
@@ -41,7 +43,6 @@ const SchedulePage = (props) => {
   //     },
   //   ];
 
-  //   TODO figure out error on week and day column
   return (
     <div>
       <Calendar
