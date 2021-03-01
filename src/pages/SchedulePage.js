@@ -24,24 +24,31 @@ const SchedulePage = (props) => {
     setEventData(data);
   }
 
-  const myEventsList = [
-    {
-      start: moment().toDate(),
-      end: moment().add(1, "days").toDate(),
-      title: "Some title",
-    },
-    {
-      start: moment().add(1, "days").toDate(),
-      end: moment().add(2, "days").toDate(),
-      title: "second title",
-    },
-  ];
+  const allEvents = eventData.map((event) => {
+    return event;
+  });
 
+  //   const myEventsList = [
+  //     {
+  //       start: moment().toDate(),
+  //       end: moment().add(1, "days").toDate(),
+  //       title: "Some title",
+  //     },
+  //     {
+  //       start: moment().add(1, "days").toDate(),
+  //       end: moment().add(2, "days").toDate(),
+  //       title: "second title",
+  //     },
+  //   ];
+
+  //   TODO figure out error on week and day column
   return (
     <div>
       <Calendar
         localizer={localizer}
-        events={myEventsList}
+        // events={myEventsList}
+        // events={eventData}
+        events={allEvents}
         startAccessor="start"
         endAccessor="end"
         style={{ height: 500, marginBottom: 20 }}
