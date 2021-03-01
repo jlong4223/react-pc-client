@@ -41,6 +41,7 @@ const Header = (props) => {
     <div className="nav">
       <Link to="/profile">Hi, {props.userState}!</Link>
       <a href="#weatherHolder">Weather</a>
+      <Link to="/schedule">Schedule</Link>
       <Link to="" onClick={props.handleLogout}>
         Logout
       </Link>
