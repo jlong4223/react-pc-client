@@ -14,7 +14,7 @@ This is an application that will be used for scheduling family lake-house events
 - Open Weather Map API
 - Geolocation
 - JsonWebToken
-- moment.js
+- Moment.js
 - react-big-calendar
 
 ## Screenshots:
@@ -24,3 +24,6 @@ This is an application that will be used for scheduling family lake-house events
 [Click]() for the deployed application. (coming soon)
 
 ## Future Enhancements:
+
+- drag and drop events on calendar
+- post, delete, edit events
