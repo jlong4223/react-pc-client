@@ -103,7 +103,13 @@ function App(props) {
               )
             }
           />
-          <Route exact path="/schedule" render={(props) => <SchedulePage />} />
+          <Route
+            exact
+            path="/schedule"
+            render={(props) =>
+              getUser() ? <SchedulePage /> : <Redirect to="/" />
+            }
+          />
         </Switch>
         <div id="mapspace">
           <Map lat={mapData.lat} lng={mapData.lng} />
