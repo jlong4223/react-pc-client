@@ -19,6 +19,14 @@ This is an application that will be used for scheduling family lake-house events
 
 ## Screenshots:
 
+### Schedule Page:
+
+![schedule](./public/images/schedule.png)
+
+### Agenda Column View:
+
+![agenda](./public/images/agendaview.png)
+
 ## Deployed Link:
 
 [Click]() for the deployed application. (coming soon)
@@ -26,4 +34,4 @@ This is an application that will be used for scheduling family lake-house events
 ## Future Enhancements:
 
 - drag and drop events on calendar
-- post, delete, edit events
+- delete and edit events
