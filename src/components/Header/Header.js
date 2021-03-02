@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "./Header.css";
@@ -14,29 +14,20 @@ const StyledHeader = styled.header`
 `;
 
 const Header = (props) => {
-  const fixedText = "fixed";
-  const whenNotFixed = "not fixed";
-  const [headerText, setHeaderText] = useState(fixedText);
+  const [isSticky, setSticky] = useState(false);
+  const ref = useRef(null);
+  const handleScroll = () => {
+    if (ref.current) {
+      setSticky(ref.current.getBoundingClientRect().top <= 0);
+    }
+  };
   useEffect(() => {
-    const header = document.getElementById("myHeader");
-    const sticky = header.offsetTop;
-    const scrollCallBack = window.addEventListener("scroll", () => {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-        if (headerText !== fixedText) {
-          setHeaderText(fixedText);
-        }
-      } else {
-        header.classList.remove("sticky");
-        if (headerText !== whenNotFixed) {
-          setHeaderText(whenNotFixed);
-        }
-      }
-    });
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", scrollCallBack);
+      window.removeEventListener("scroll", () => handleScroll);
     };
-  });
+  }, []);
+
   let nav = props.userState ? (
     <div className="nav">
       <Link to="/profile">Hi, {props.userState}!</Link>
@@ -55,7 +46,10 @@ const Header = (props) => {
   );
 
   return (
-    <StyledHeader id="myHeader">
+    <StyledHeader
+      className={`sticky-wrapper${isSticky ? " sticky" : ""}`}
+      ref={ref}
+    >
       <div id="headerIcons">
         <Link className="title" to="/">
           <i className="fas fa-ship fa-lg"></i>
