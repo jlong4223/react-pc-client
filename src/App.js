@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { getUser, logout } from "./services/UserService";
+import { getUser, getPic, logout } from "./services/UserService";
 import { getCurrentLatLng } from "./services/Geolocation";
 import { getCurWeatherByLatLng } from "./services/WeatherAPI";
 
@@ -41,15 +41,18 @@ function App(props) {
     getMapData();
   }, []);
 
-  const [userState, setUserState] = useState({ user: getUser() });
+  const [userState, setUserState] = useState({
+    user: getUser(),
+    pic: getPic(),
+  });
 
   function handleSignupOrLogin() {
-    setUserState({ user: getUser() });
+    setUserState({ user: getUser(), pic: getPic() });
   }
 
   function handleLogout() {
     logout();
-    setUserState({ user: null });
+    setUserState({ user: null, pic: null });
     props.history.push("/");
   }
 
@@ -93,12 +96,14 @@ function App(props) {
               />
             )}
           />
+          {/* TODO change the path to equal user.name or id */}
           <Route
             exact
+            // path={`profile/${userState.user}`}
             path="/profile"
             render={(props) =>
               getUser() ? (
-                <ProfilePage {...props} user={userState.user} />
+                <ProfilePage {...props} user={userState} />
               ) : (
                 <Redirect to="/" />
               )
