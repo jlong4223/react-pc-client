@@ -17,6 +17,7 @@ import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App(props) {
+  // TODO move map and weather info to a different component/page (everything, state and all)
   const [mapData, setMapData] = useState({
     lat: null,
     lng: null,
