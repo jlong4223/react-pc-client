@@ -38,7 +38,7 @@ const SchedulePage = (props) => {
         events={allEvents}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500, marginBottom: 20 }}
+        style={{ height: 500, marginBottom: 20, marginTop: 100 }}
       />
       <EventForm getEventData={getEventData} />
     </div>
