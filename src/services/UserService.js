@@ -1,4 +1,9 @@
-import { setToken, getUserFromToken, removeToken } from "./TokenService";
+import {
+  setToken,
+  getUserFromToken,
+  getUserPicFromToken,
+  removeToken,
+} from "./TokenService";
 
 const BASE_URL = "http://localhost:3001/";
 
@@ -38,4 +43,8 @@ function getUser() {
   return getUserFromToken();
 }
 
-export { signup, getUser, login, logout };
+function getPic() {
+  return getUserPicFromToken();
+}
+
+export { signup, getUser, login, logout, getPic };
