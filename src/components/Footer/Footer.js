@@ -4,7 +4,7 @@ const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #644153;
+  background-color: #1f4f87;
   height: 150px;
 
   p {
