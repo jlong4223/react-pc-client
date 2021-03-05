@@ -1,6 +1,7 @@
 import {
   setToken,
   getUserFromToken,
+  getUserIdFromToken,
   getUserPicFromToken,
   removeToken,
 } from "./TokenService";
@@ -43,8 +44,12 @@ function getUser() {
   return getUserFromToken();
 }
 
+function getId() {
+  return getUserIdFromToken();
+}
+
 function getPic() {
   return getUserPicFromToken();
 }
 
-export { signup, getUser, login, logout, getPic };
+export { signup, getUser, login, logout, getPic, getId };

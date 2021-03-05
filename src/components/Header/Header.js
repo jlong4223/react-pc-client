@@ -30,7 +30,7 @@ const Header = (props) => {
 
   let nav = props.userState ? (
     <div className="nav">
-      <Link to="/profile">Hi, {props.userState}!</Link>
+      <Link to={`/profile/${props.userState}`}>Hi, {props.userState}!</Link>
       <a href="#weatherHolder">Weather</a>
       <Link to="/schedule">Schedule</Link>
       <Link to="" onClick={props.handleLogout}>

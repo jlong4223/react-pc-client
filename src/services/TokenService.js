@@ -27,6 +27,11 @@ function getUserFromToken() {
   return token ? JSON.parse(atob(token.split(".")[1])).user.name : null;
 }
 
+function getUserIdFromToken() {
+  const token = getToken();
+  return token ? JSON.parse(atob(token.split(".")[1])).user.id : null;
+}
+
 function getUserPicFromToken() {
   const token = getToken();
   return token ? JSON.parse(atob(token.split(".")[1])).user.pic : null;
@@ -36,6 +41,7 @@ export {
   setToken,
   getToken,
   getUserFromToken,
+  getUserIdFromToken,
   getUserPicFromToken,
   removeToken,
 };
