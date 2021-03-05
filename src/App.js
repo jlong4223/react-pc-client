@@ -26,7 +26,9 @@ function App(props) {
   });
 
   async function getMapData() {
-    const { lat, lng } = await getCurrentLatLng();
+    // const { lat, lng } = await getCurrentLatLng();
+    const lat = 45.386792;
+    const lng = -84.761338;
     const weatherData = await getCurWeatherByLatLng(lat, lng);
     console.log(Math.round(weatherData.main.temp));
     setMapData({
@@ -113,7 +115,11 @@ function App(props) {
             exact
             path="/schedule"
             render={(props) =>
-              getUser() ? <SchedulePage /> : <Redirect to="/" />
+              getUser() ? (
+                <SchedulePage user={userState.user} />
+              ) : (
+                <Redirect to="/" />
+              )
             }
           />
         </Switch>
