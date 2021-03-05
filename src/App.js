@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { getUser, getPic, logout } from "./services/UserService";
+import { getUser, getPic, getId, logout } from "./services/UserService";
 import { getCurrentLatLng } from "./services/Geolocation";
 import { getCurWeatherByLatLng } from "./services/WeatherAPI";
 
@@ -45,11 +45,12 @@ function App(props) {
 
   const [userState, setUserState] = useState({
     user: getUser(),
+    id: getId(),
     pic: getPic(),
   });
 
   function handleSignupOrLogin() {
-    setUserState({ user: getUser(), pic: getPic() });
+    setUserState({ user: getUser(), pic: getPic(), id: getId() });
   }
 
   function handleLogout() {
@@ -101,8 +102,8 @@ function App(props) {
           {/* TODO change the path to equal user.name or id */}
           <Route
             exact
-            // path={`profile/${userState.user}`}
-            path="/profile"
+            path={`/profile/${userState.user}`}
+            // path="/profile"
             render={(props) =>
               getUser() ? (
                 <ProfilePage {...props} user={userState} />
@@ -116,7 +117,7 @@ function App(props) {
             path="/schedule"
             render={(props) =>
               getUser() ? (
-                <SchedulePage user={userState.user} />
+                <SchedulePage id={userState.id} />
               ) : (
                 <Redirect to="/" />
               )
