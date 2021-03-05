@@ -2,10 +2,12 @@ import { useState } from "react";
 import { addEventData } from "../services/Events";
 
 const EventForm = (props) => {
+  // TODO pass the user id instead of name (get it from token)
   const [formState, setFormState] = useState({
     title: "",
     start: null,
     end: null,
+    userId: `${props.user}`,
   });
 
   function handleChange(e) {
@@ -26,6 +28,7 @@ const EventForm = (props) => {
             title: "",
             start: "",
             end: "",
+            user_name: `${props.user}`,
           });
         });
     } catch (err) {
