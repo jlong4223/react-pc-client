@@ -40,7 +40,7 @@ const SchedulePage = (props) => {
         endAccessor="end"
         style={{ height: 500, marginBottom: 20, marginTop: 100 }}
       />
-      <EventForm getEventData={getEventData} user={props.user} />
+      <EventForm getEventData={getEventData} id={props.id} />
     </div>
   );
 };
