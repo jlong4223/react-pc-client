@@ -12,7 +12,7 @@ const Weather = (props) => {
       <p>A beautiful summer day for shorts and a t-shirt! 😎</p>
     ) : (
       <p>
-        <strong>Dont Go Outside</strong>
+        <strong>🧊Dont Go Outside🧊</strong>
       </p>
     );
 
