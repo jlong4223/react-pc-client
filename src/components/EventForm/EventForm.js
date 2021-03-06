@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { addEventData } from "../services/Events";
+import { addEventData } from "../../services/Events";
+import "./EventForm.css";
 
 const EventForm = (props) => {
   const [formState, setFormState] = useState({
@@ -36,16 +37,21 @@ const EventForm = (props) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} style={{ marginBottom: 20 }}>
+    <div id="eventComp">
+      <form style={{ marginBottom: 20 }}>
+        <legend>Example/Format</legend>
+        <input style={{ margin: 5, width: 300 }} value="Example Title" />
+        <input style={{ margin: 5 }} value="2021-08-25 12:30:00" />
+        <input style={{ margin: 5 }} value="2021-08-25 13:30:00" />
+      </form>
+      <form id="eventForm" onSubmit={handleSubmit} style={{ marginBottom: 20 }}>
         <legend>Add an event:</legend>
-        <legend>Format Date & Time: 0000-00-00 00:00</legend>
         <input
           placeholder="Title"
           name="title"
           value={formState.title}
           onChange={handleChange}
-          style={{ margin: 5 }}
+          style={{ margin: 5, width: 300 }}
         />
         <input
           placeholder="Start Date and Time"
