@@ -4,12 +4,3 @@
   display: flex;
   flex-direction: column;
 }
-
-#mapspace {
-  display: flex;
-  justify-content: space-around;
-  background-color: #eae8e1;
-  /* border: 1px solid green; */
-  width: 1200px;
-  /* margin-bottom: 20px; */
-}

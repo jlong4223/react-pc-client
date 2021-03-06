@@ -1,8 +1,37 @@
+import { useState, useEffect } from "react";
+import { getCurWeatherByLatLng } from "../../services/WeatherAPI";
+// import { getCurrentLatLng } from "../../services/Geolocation";
 import "./HomeContent.css";
-// import Map from "../Map/Map";
-// import Weather from "../Weather/Weather";
-// TODO figure out error when adding map here
+import Map from "../../components/Map/Map";
+import Weather from "../../components/Weather/Weather";
+
 const HomePageContent = (props) => {
+  const [mapData, setMapData] = useState({
+    lat: null,
+    lng: null,
+    temp: null,
+    icon: "",
+  });
+
+  async function getMapData() {
+    // uncomment geolocation to use commented out function
+    // const { lat, lng } = await getCurrentLatLng();
+    const lat = 45.386792;
+    const lng = -84.761338;
+    const weatherData = await getCurWeatherByLatLng(lat, lng);
+    console.log(Math.round(weatherData.main.temp));
+    setMapData({
+      lat,
+      lng,
+      temp: Math.round(weatherData.main.temp),
+      icon: weatherData.weather[0].icon,
+    });
+  }
+
+  useEffect(() => {
+    getMapData();
+  }, []);
+
   return (
     <>
       <div id="content-holder">
@@ -34,12 +63,10 @@ const HomePageContent = (props) => {
           </div>
         </div>
       </div>
-      {/* <div className="contentDiv">
-        <div id="mapspace">
-          <Map lat={props.lat} lng={props.lng} />
-          <Weather icon={props.icon} temp={props.temp} />
-        </div>
-      </div> */}
+      <div id="mapspace">
+        <Map lat={mapData.lat} lng={mapData.lng} />
+        <Weather icon={mapData.icon} temp={mapData.temp} />
+      </div>
     </>
   );
 };

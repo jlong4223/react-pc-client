@@ -16,3 +16,9 @@
   justify-content: space-around;
   align-items: center;
 }
+
+@media screen and (max-width: 800px) {
+  #weatherHolder {
+    margin-left: 0;
+  }
+}
