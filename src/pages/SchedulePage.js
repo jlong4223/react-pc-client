@@ -34,14 +34,15 @@ const SchedulePage = (props) => {
   // TODO allow user to create an event based off time drag selection
   const handleSelectSlot = ({ start, end, resourceId }) => {
     console.log("Selected", start, end);
+    prompt("Enter a title");
   };
 
   return (
     <div>
       <Calendar
-        selectable={true}
+        // selectable={true}
         popup={true}
-        onSelectSlot={handleSelectSlot}
+        // onSelectSlot={handleSelectSlot}
         localizer={localizer}
         events={allEvents}
         startAccessor="start"
