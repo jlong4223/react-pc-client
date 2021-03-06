@@ -41,8 +41,8 @@ const EventForm = (props) => {
       <form style={{ marginBottom: 20 }}>
         <legend>Example/Format</legend>
         <input style={{ margin: 5, width: 300 }} value="Example Title" />
-        <input style={{ margin: 5 }} value="2021-08-25 12:30:00" />
-        <input style={{ margin: 5 }} value="2021-08-25 13:30:00" />
+        <input style={{ margin: 5 }} value="2021-08-25 12:30" />
+        <input style={{ margin: 5 }} value="2021-08-25 13:30" />
       </form>
       <form id="eventForm" onSubmit={handleSubmit} style={{ marginBottom: 20 }}>
         <legend>Add an event:</legend>
@@ -52,6 +52,7 @@ const EventForm = (props) => {
           value={formState.title}
           onChange={handleChange}
           style={{ margin: 5, width: 300 }}
+          required
         />
         <input
           placeholder="Start Date and Time"
@@ -60,6 +61,7 @@ const EventForm = (props) => {
           value={formState.start}
           onChange={handleChange}
           style={{ margin: 5 }}
+          required
         />
         <input
           placeholder="End Date and Time"
@@ -68,6 +70,7 @@ const EventForm = (props) => {
           value={formState.end}
           onChange={handleChange}
           style={{ margin: 5 }}
+          required
         />
         <button className="btn btn-dark">Submit</button>
       </form>
