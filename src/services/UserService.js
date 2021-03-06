@@ -31,7 +31,10 @@ function login(credentials) {
     .then((res) => {
       if (res.ok) return res.json();
       // Probably a duplicate email
-      throw new Error("Bad credentials");
+      else {
+        alert("Bad Credentials");
+        throw new Error("Bad credentials");
+      }
     })
     .then(({ token }) => setToken(token));
 }
