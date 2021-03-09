@@ -24,6 +24,7 @@ const ContactForm = (props) => {
     }));
   }
   // TODO change to pc-api
+  //   TODO move to services
   const submitEmail = async (e) => {
     e.preventDefault();
     console.log({ emailState, message });
@@ -48,6 +49,11 @@ const ContactForm = (props) => {
         });
       });
   };
+
+  function formValid() {
+    return !!(emailState.email && message.message);
+  }
+
   return (
     <div className="container" id="messageme">
       <div>
@@ -61,6 +67,7 @@ const ContactForm = (props) => {
                 </h3>
                 <input
                   type="text"
+                  className="form-control message"
                   name="email"
                   placeholder="Email Address"
                   onChange={handleEmailChange}
@@ -76,8 +83,9 @@ const ContactForm = (props) => {
                 </h3>
                 <textarea
                   name="message"
+                  className="form-control message"
                   type="text"
-                  placeholder="message"
+                  placeholder="Message"
                   value={message.message}
                   onChange={handleMessageChange}
                   required
@@ -85,7 +93,13 @@ const ContactForm = (props) => {
               </div>
             </div>
             <div>
-              <button id="submit" className="btn btn-default" type="submit">
+              <button
+                id="submit"
+                className="btn btn-sm btn-primary"
+                disabled
+                disabled={!formValid()}
+                type="submit"
+              >
                 Send Message
               </button>
             </div>
