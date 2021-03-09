@@ -22,9 +22,10 @@ const SchedulePage = (props) => {
 
   async function getEventData() {
     const data = await fetchEventData();
+    // console.log(data);
     setEventData(data);
   }
-
+  // TODO figure out why events go in 6 hrs behind when connected to clearDB
   const allEvents = eventData.map((event) => {
     event.start = moment.utc(event.start).toDate();
     event.end = moment.utc(event.end).toDate();
