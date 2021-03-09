@@ -12,6 +12,7 @@ import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import ContactPage from "./pages/ContactPage";
+import NotFound from "./components/NotFound";
 
 function App(props) {
   const [userState, setUserState] = useState({
@@ -85,6 +86,7 @@ function App(props) {
             path="/contact"
             render={(props) => <ContactPage {...props} />}
           />
+          <Route component={NotFound} />
         </Switch>
       </main>
       <Footer />
