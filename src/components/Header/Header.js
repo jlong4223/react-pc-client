@@ -11,6 +11,14 @@ const StyledHeader = styled.header`
   height: 50px;
   background-color: #eae8e1;
   /* border: 1px solid green; */
+  @media screen and (max-width: 800px) {
+    .nav a {
+      font-size: 12px;
+    }
+    #headerIcons a {
+      font-size: 15px;
+    }
+  }
 `;
 
 const Header = (props) => {

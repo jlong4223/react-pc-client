@@ -28,3 +28,9 @@
 #login > button {
   width: 200px;
 }
+
+@media screen and (max-width: 800px) {
+  #loginDiv {
+    margin-top: 80px;
+  }
+}

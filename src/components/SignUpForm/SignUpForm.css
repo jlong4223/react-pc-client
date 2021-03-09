@@ -39,3 +39,9 @@
 #links a {
   height: 20px;
 }
+
+@media screen and (max-width: 800px) {
+  #signupDiv {
+    margin-top: 80px;
+  }
+}
