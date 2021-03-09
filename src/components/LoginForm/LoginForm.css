@@ -1,0 +1,29 @@
+#loginDiv {
+  margin-top: 20px;
+}
+
+#loginDiv legend {
+  /* border: 1px solid red; */
+  background-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  color: white;
+  width: 180px;
+  margin-left: 59px;
+  margin-bottom: -20px;
+}
+#login {
+  /* border: 1px solid green; */
+  border-radius: 10px;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#login div,
+button {
+  width: 200px;
+}

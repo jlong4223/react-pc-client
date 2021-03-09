@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { login } from "../services/UserService";
+import { login } from "../../services/UserService";
+import "./LoginForm.css";
 
 const LoginForm = (props) => {
   const [formState, setFormState] = useState({
@@ -35,12 +36,13 @@ const LoginForm = (props) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <legend>Login</legend>
+    <div id="loginDiv">
+      <legend>Login</legend>
+      <form id="login" onSubmit={handleSubmit}>
         <div>
           <input
             type="email"
+            className="form-control"
             name="email"
             placeholder="Email"
             id="email"
@@ -52,13 +54,22 @@ const LoginForm = (props) => {
           <input
             type="password"
             name="password"
+            className="form-control"
+            style={{ marginTop: 10 }}
             placeholder="Password"
             id="password"
             value={formState.password}
             onChange={handleChange}
           />
         </div>
-        <button disabled={!formValid()}>Log In</button>
+        <button
+          className="btn btn-sm btn-primary"
+          disabled
+          disabled={!formValid()}
+          style={{ marginTop: 10 }}
+        >
+          Submit
+        </button>
         <Link to="/signup">Don't have an account?</Link>
       </form>
     </div>
