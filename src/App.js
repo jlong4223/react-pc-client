@@ -11,6 +11,7 @@ import SchedulePage from "./pages/SchedulePage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import ContactPage from "./pages/ContactPage";
 
 function App(props) {
   const [userState, setUserState] = useState({
@@ -78,6 +79,11 @@ function App(props) {
                 <Redirect to="/" />
               )
             }
+          />
+          <Route
+            exact
+            path="/contact"
+            render={(props) => <ContactPage {...props} />}
           />
         </Switch>
       </main>
