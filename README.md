@@ -38,9 +38,12 @@ This is an application that will be used for scheduling family lake-house events
 
 ## Deployed Link:
 
-[Click]() for the deployed application. (coming soon)
+[Click](https://port-chaveriat.herokuapp.com/) for the deployed application.
 
 ## Future Enhancements:
 
 - drag and drop events on calendar
 - delete and edit events
+- view users page
+- adding routes and more information to the profile page
+- hamburger navbar
