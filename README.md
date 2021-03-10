@@ -19,6 +19,10 @@ This is an application that will be used for scheduling family lake-house events
 
 ## Screenshots:
 
+### Home Page:
+
+![home](./public/images/home.png)
+
 ### Schedule Page:
 
 ![schedule](./public/images/schedule.png)
@@ -26,6 +30,11 @@ This is an application that will be used for scheduling family lake-house events
 ### Agenda Column View:
 
 ![agenda](./public/images/agendaview.png)
+
+### Login and Register Forms:
+
+![login](./public/images/login.png)
+![regiser](./public/images/signup.png)
 
 ## Deployed Link:
 
