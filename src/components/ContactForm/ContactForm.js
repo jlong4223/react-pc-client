@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sendMail } from "../../services/Mailer";
 import "./ContactForm.css";
 
 const ContactForm = (props) => {
@@ -23,31 +24,34 @@ const ContactForm = (props) => {
       [e.target.name]: e.target.value,
     }));
   }
-  // TODO change to pc-api
-  //   TODO move to services
+
   const submitEmail = async (e) => {
     e.preventDefault();
-    console.log({ emailState, message });
-    const response = await fetch(
-      "https://jlong-portfolio-backend.herokuapp.com/send",
-      {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ emailState, message }),
-      }
-    )
-      .then((res) => res.json())
-      .then(alert("Message Sent"))
-      .then(() => {
-        setEmailState({
-          email: "",
+    try {
+      await sendMail({ emailState, message })
+        .then((res) => res.json())
+        .then(async (res) => {
+          const resData = await res;
+          console.log(resData);
+          if (resData.status === "success") {
+            alert(
+              "Message Sent -  Port Chavieriat's team will be in touch soon"
+            );
+          } else if (resData.status === "fail") {
+            alert("Message failed to send");
+          }
+        })
+        .then(() => {
+          setEmailState({
+            email: "",
+          });
+          setMessage({
+            message: "",
+          });
         });
-        setMessage({
-          message: "",
-        });
-      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   function formValid() {
